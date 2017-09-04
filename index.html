@@ -1,7 +1,135 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+<!DOCTYPE HTML>
+<!-- Michael Li -->
+<html> <!-- I am a parent-->
+	<head> <!--I am a child of the html tag-->
+			<title> Simon </title>
+			<style> 
+			body
+			{
+				text-align: center;
+			}
+			
+			div
+			{
+				display: inline-block;
+				text-align: center;
+				font: 24pt timesnewroman;
+			}
+			
+			#colorContainer
+			{
+				border: 5px solid black;
+				width:100px;
+				height: 100px;
+				background-color: white;
+			}
+			
+			button
+			{
+				width: 80px;
+				text-align: center;
+			}
+			</style> <!-- CSS goes in here -->
+			
+			<script src = "utilities.js"></script>
+			<script>
+			function initialize()
+			{
+				colorElement=document.getElementById("colorContainer");
+				cBox=document.getElementById("commentBox");
+				buttonElements=document.getElementsByTagName("button");
+				
+				possibleColorArray=["red","green","blue","yellow"];
+				
+				counter=0;
+				guessCounter=0;
+				
+				colorArray=[];
+				
+				addRandomColor();
+				showAllColors();
+				
+				
+				//colorElement.style.backgroundColor="red";
+			}
+			
+			function addRandomColor()
+			{
+				num = getRandomInteger(0, 3);
+				colorArray.push(possibleColorArray[num]);
+			}
+			
+			function displayColor()
+			{
+				colorElement.style.backgroundColor=colorArray[counter];
+				colorElement.innerHTML=counter;
+				counter++;
+				toggleButtons(true);
+				
+				if (counter>colorArray.length)
+				{
+					clearInterval(interval);
+					counter=0;
+					colorElement.innerHTML="";
+					colorElement.style.backgroundColor="white";
+					toggleButtons(false);
+				}
+			}
+			
+			function showAllColors()
+			{
+				interval=setInterval(displayColor,500);
+			}
+			
+			function toggleButtons(condition)
+			{
+				//alert(condition);
+				buttonElements[0].disabled=condition;
+				buttonElements[1].disabled=condition;
+				buttonElements[2].disabled=condition;
+				buttonElements[3].disabled=condition;
+				/*for (var j = 0; j++; j < buttonElements.length)
+				{
+					buttonElements[j].disabled=condition;   //Not sure why this for-loop doesn't work 
+				}*/
+			}
+			
+			function guessedColors(whichColor)
+			{
+				if (colorArray[guessCounter]==whichColor)
+				{	
+					cBox.innerHTML = "Correct";
+					guessCounter++;
+				}
+				else
+				{
+					cBox.innerHTML = "Game over. You have survived " + colorArray.length + " rounds.";
+					toggleButtons(true);
+					//hide buttons and say game over.
+				}
+				
+				if (guessCounter>=colorArray.length)
+				{
+					cBox.innerHTML = "You have guessed correctly. The next round has begun."
+					guessCounter=0;
+					addRandomColor();
+					showAllColors();
+				}	
+			}
+			</script> <!-- Javascript goes in here -->
+	</head>
+	<body onload = "initialize()">
+	
+		<div id = "colorContainer"> 0 </div>
+		<br />
+		<!--<button onclick = "addRandomColor()"> Testing  </button>-->
+		
+		<div id = "commentBox" > </div>
+		<br />
+		<button style = "background-color: red" onclick = "guessedColors('red')" > Red </button>
+		<button style = "background-color: green" onclick = "guessedColors('green')"> Green </button>
+		<button style = "background-color: blue" onclick = "guessedColors('blue')"> Blue </button>
+		<button style = "background-color: yellow" onclick = "guessedColors('yellow')"> Yellow </button>
+		
+	</body>
 </html>
