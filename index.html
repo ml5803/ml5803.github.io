@@ -3,7 +3,28 @@
 <html>
 	<head>
 		<title> Michael Li's site! </title>
-		<style> </style>
+		<style>
+			.hover{
+				float: left;
+				border: 5px solid black;
+				width: 35%;
+				text-align: center;
+				display: inline-block;
+			}
+			
+			.displayWindow{
+				float: right;
+				border: 5px solid black;
+				width: 60%;
+				text-align: center;
+				display: inline-block;
+			}
+			
+			.link{
+				float:right;
+			}
+			
+		</style>
 		<script> 
 			function initialize(){
 				alert("hi there");
@@ -11,6 +32,17 @@
 		</script> 
 	</head>
 	<body onload = "initialize()">
-		<div> Testing </div>
+		<div> Michael Li <span> <a class = 'link' href = 'https://github.com/ml5803'>  Follow me on GitHub!</a> </span> </div>
+		<div class = 'hover'>
+			<p> Awards </p>
+			<p> Projects </p>
+			<p> Careers </p>
+			<p> About</p>
+		</div>
+		
+		<div class = 'displayWindow'>
+			Status Information
+		</div>
+		
 	</body>
 </html>
