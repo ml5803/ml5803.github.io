@@ -152,7 +152,12 @@
 				careerText ="Career Filler";
 				aboutText = "About Filler";
 
+				imgSrcArr = ["http://www.stateofdigital.com/wp-content/uploads/2016/09/Penguin.jpg","https://tse1.mm.bing.net/th?
+
+id=OIP.mFSuEAUy23zzTtQRNGfukQEsDh&pid=15.1","http://en.es-static.us/upl/2012/06/penguinCloseup.jpg"];
+
 				resizePic();
+				slidePics(imgSrcArr);
 			}
 			
 			function swapText(text){
@@ -176,6 +181,22 @@
 				picFrame.style.marginLeft= window.outerWidth * .006 + "px";
 				
 			}
+
+			function slidePics(srcArray){
+
+				for (i = 0; i < srcArray.length; i++){
+					(function(i){
+						window.setTimeout(function(){
+							setPic(srcArray[i]);},i*5000);
+					}(i));
+				}
+
+			}
+
+			function setPic(srcString){
+				pic.src = srcString;
+			}
+
 
 		</script> 
 	</head>
