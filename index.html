@@ -9,7 +9,7 @@
 			}
 			
 			body{
-				min-width:400px;
+				min-width:500px;
 			}
 			
 			.background{
@@ -32,18 +32,23 @@
 				background-color: rgba(0,0,0,.3);
 			}
 			
+			.sideContainer{
+				//border:5px solid red;
+				position:fixed:
+				top:350px;
+				margin-top:20px;
+				margin-left:1%;
+				display:inline-block;
+
+			}
 			.hover{
 				border: 5px solid white;
 				border-radius:10px;
-				width: 15%;
+				width:10vw;
 				min-width:100px;
-				min-height:100px;
-				margin-top:20px;
-				margin-left:1%;
+				min-height:100px;	
 				text-align: center;
 				color:white;
-				display: inline-block;
-				position:fixed;
 			}
 			
 			.hover p{
@@ -66,7 +71,7 @@
 				margin-top:20px;
 				margin-right:1%;
 				text-align: center;
-				min-height:400px;
+				min-height:450px;
 				padding:5px 5px 5px 5px;
 				color:white;
 				overflow:auto;
@@ -75,17 +80,13 @@
 			
 			.subHover{
 				color:white;
-				width:15%;
-				min-width:100px;
 				min-height:100px;
 				border: 5px solid white;
 				border-radius:10px;
-				text-align:center;
-				padding: 5px 0px 5px 0px;
-				margin-left:1%;
-				margin-top:10px;			
+				margin-top:10px;
+				text-align:center;			
 				min-height:100px;
-				top:350px;
+				max-height:250px;
 				overflow: auto;
 				display:none;
 			}
@@ -135,7 +136,7 @@
 				projectSub.style.display = "none";
 				careerSub.style.display = "none";
 				aboutSub.style.display = "none";
-				sub.style.display = "inline-block";
+				sub.style.display = "block";
 			}
 		</script> 
 	</head>
@@ -146,38 +147,52 @@
 			<a class = 'link' href = 'https://github.com/ml5803'> GitHub</a> <br />
 			<a class = 'link' href = 'https://www.linkedin.com/in/michael-li-72a8b214a/'> LinkedIn</a>
 		</div>
-		<div class = 'hover'>
-			<p onclick = "swapText(awardText);swapSub(awardSub);"> Awards </p>
-			<p onclick = "swapText(projectText);swapSub(projectSub);"> Projects </p>
-			<p onclick = "swapText(careerText);swapSub(careerSub);"> Careers </p>
-			<p onclick = "swapText(aboutText);swapSub(aboutSub);"> About</p>
-		</div>
+
+		<div class = 'sideContainer'> 
+			<div class = 'hover'>
+				<p onclick = "swapText(awardText);swapSub(awardSub);"> Awards </p>
+				<p onclick = "swapText(projectText);swapSub(projectSub);"> Projects </p>
+				<p onclick = "swapText(careerText);swapSub(careerSub);"> Careers </p>
+				<p onclick = "swapText(aboutText);swapSub(aboutSub);"> About</p>
+			</div>
+
+			<div class = 'subHover' id = 'awardSub'>
+				<p> Awards</p>
+				<p> Text 2</p>
+			</div>
 		
-		<div class = 'subHover' id = 'awardSub'>
-			<p> Awards</p>
-			<p> Text 2</p>
-		</div>
+			<div class = 'subHover' id = 'projectSub'>
+				<p> Project</p>
+				<p> Text 4</p>
+				<p> Text 3</p>
+			</div>
+			
+			<div class = 'subHover' id = 'careerSub'>
+				<p> Careers</p>
+				<p> Text 4</p>
+				<p> Text 3</p>
+				<p> Text 2</p>
+				<p> Text 3</p>
+			</div>
 		
-		<div class = 'subHover' id = 'projectSub'>
-			<p> Project</p>
-			<p> Text 4</p>
-			<p> Text 3</p>
+			<div class = 'subHover' id = 'aboutSub'>
+				<p> About</p>
+				<p> Text 4</p>
+				<p> Text 3</p>
+				<p> Text 2</p>
+				<p> Text 4</p>
+				<p> Text 3</p>
+				<p> Text 2</p>
+				<p> Text 4</p>
+				<p> Text 3</p>
+				<p> Text 2</p>
+				<p> Text 4</p>
+				<p> Text 3</p>
+				<p> Text 2</p>
+			</div>	
 		</div>
+
 		
-		<div class = 'subHover' id = 'careerSub'>
-			<p> Careers</p>
-			<p> Text 4</p>
-			<p> Text 3</p>
-			<p> Text 2</p>
-			<p> Text 3</p>
-		</div>
-		
-		<div class = 'subHover' id = 'aboutSub'>
-			<p> About</p>
-			<p> Text 4</p>
-			<p> Text 3</p>
-			<p> Text 2</p>
-		</div>
 		
 		<div id = 'displayWindow'>
 			Status Information
