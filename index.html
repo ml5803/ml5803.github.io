@@ -70,6 +70,33 @@
 				display: inline-block;
 			}
 			
+			.subHover{
+				color:white;
+				width:20%;
+				border: 5px solid white;
+				border-radius:10px;
+				text-align:center;
+				padding: 5px 0px 5px 0px;
+				margin-left:1%;
+				margin-top:10px;
+				height:30vh;
+				min-height:100px;
+				overflow: auto;
+				display:none;
+			}
+			
+			.subHover p{
+				margin-left:5px;
+				margin-right:5px;
+				border-radius:10px;
+			}
+			
+			.subHover p:hover{
+				font-style:italic;
+				cursor: pointer;
+				background-color: gray;
+			}
+			
 			.link{
 				font-size: 20px;
 				color:white;
@@ -83,6 +110,10 @@
 		<script> 
 			function initialize(){
 				statusDisplay = document.getElementById("displayWindow");
+				awardSub = document.getElementById('awardSub');
+				projectSub = document.getElementById('projectSub');
+				careerSub = document.getElementById('careerSub')
+				aboutSub = document.getElementById('aboutSub');
 				
 				awardText = "This is filler text for awards";
 				projectText = "Project Filler";
@@ -94,7 +125,13 @@
 				statusDisplay.innerHTML = text;
 			}
 			
-			
+			function swapSub(sub){
+				awardSub.style.display = "none";
+				projectSub.style.display = "none";
+				careerSub.style.display = "none";
+				aboutSub.style.display = "none";
+				sub.style.display = "inline-block";
+			}
 		</script> 
 	</head>
 	<body onload = "initialize()">
@@ -105,15 +142,42 @@
 			<a class = 'link' href = 'https://www.linkedin.com/in/michael-li-72a8b214a/'> LinkedIn</a>
 		</div>
 		<div class = 'hover'>
-			<p onclick = "swapText(awardText)"> Awards </p>
-			<p onclick = "swapText(projectText)"> Projects </p>
-			<p onclick = "swapText(careerText)"> Careers </p>
-			<p onclick = "swapText(aboutText)"> About</p>
+			<p onclick = "swapText(awardText);swapSub(awardSub);"> Awards </p>
+			<p onclick = "swapText(projectText);swapSub(projectSub);"> Projects </p>
+			<p onclick = "swapText(careerText);swapSub(careerSub);"> Careers </p>
+			<p onclick = "swapText(aboutText);swapSub(aboutSub);"> About</p>
 		</div>
 		
 		<div id = 'displayWindow'>
 			Status Information
 		</div>
 		
+		<div class = 'subHover' id = 'awardSub'>
+			<p> Awards</p>
+			<p> Text 2</p>
+		</div>
+		
+		<div class = 'subHover' id = 'projectSub'>
+			<p> Project</p>
+			<p> Text 4</p>
+			<p> Text 3</p>
+		</div>
+		
+		<div class = 'subHover' id = 'careerSub'>
+			<p> Careers</p>
+			<p> Text 4</p>
+			<p> Text 3</p>
+			<p> Text 2</p>
+			<p> Text 3</p>
+			<p> Text 2</p>
+			<p> Text 3</p>
+		</div>
+		
+		<div class = 'subHover' id = 'aboutSub'>
+			<p> About</p>
+			<p> Text 4</p>
+			<p> Text 3</p>
+			<p> Text 2</p>
+		</div>
 	</body>
 </html>
