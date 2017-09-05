@@ -8,27 +8,62 @@
 				font-family: Helvetica, sans-serif
 			}
 			
-			.hover{
-				border: 5px solid black;
-				width: 20%;
-				margin-left:5%;
+			.background{
+				z-index: -1;
+				position: absolute;
+				overflow:none;
+				top:0px;
+				left:0px;
+				width:100%;
+				height:100%;
+			}
+			
+			.header{
+				font-size:30px;
 				text-align: center;
+				color:white;
+				border:5px solid white;
+				border-radius:20px;
+				padding: 10px 0px 10px 0px;
+				background-color: rgba(0,0,0,.3);
+			}
+			
+			.hover{
+				border: 5px solid white;
+				border-radius:10px;
+				width: 20%;
+				margin-top:20px;
+				margin-left:1%;
+				text-align: center;
+				color:white;
 				display: inline-block;
+			}
+			
+			.hover p:hover{
+				font-style:italic;
+				cursor: pointer;
 			}
 			
 			.displayWindow{
 				float: right;
-				border: 5px solid black;
-				width: 60%;
-				margin-right:5%;
+				border: 5px solid white;
+				border-radius: 15px;
+				width: 70%;
+				margin-top:20px;
+				margin-right:1%;
 				text-align: center;
+				min-height:300px;
+				color:white;
 				display: inline-block;
 			}
 			
 			.link{
-				float:right;
-				width:30%;
-				padding-right:5%;
+				font-size: 20px;
+				color:white;
+			}
+			
+			.link:hover{
+				font-style: italic;
 			}
 			
 		</style>
@@ -39,8 +74,12 @@
 		</script> 
 	</head>
 	<body onload = "initialize()">
-		
-		<div style = 'padding-left:5%;font-size:30px'> Michael Li <span> <a class = 'link' href = 'https://github.com/ml5803'>  Follow me on GitHub!</a> </span> </div>
+		<img class = 'background' src = 'https://i.pinimg.com/originals/2c/0e/d4/2c0ed43c8b8b3ed5c86387cd84cb4411.jpg'>
+		<div class = 'header'> 
+			Michael Li <br />
+			<a class = 'link' href = 'https://github.com/ml5803'> GitHub</a> <br />
+			<a class = 'link' href = 'https://www.linkedin.com/in/michael-li-72a8b214a/'> LinkedIn</a>
+		</div>
 		<div class = 'hover'>
 			<p> Awards </p>
 			<p> Projects </p>
