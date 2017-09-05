@@ -32,7 +32,7 @@
 				background-color: rgba(0,0,0,.3);
 			}
 			
-			.sideContainer{
+			#sideContainer{
 				//border:5px solid red;
 				position:fixed:
 				top:350px;
@@ -48,6 +48,7 @@
 				min-width:100px;
 				min-height:100px;	
 				text-align: center;
+				background-color: rgba(0,0,0,.3);
 				color:white;
 			}
 			
@@ -76,6 +77,7 @@
 				color:white;
 				overflow:auto;
 				display: inline-block;
+				background-color: rgba(0,0,0,.3);
 			}
 			
 			.subHover{
@@ -88,6 +90,7 @@
 				min-height:100px;
 				max-height:250px;
 				overflow: auto;
+				background-color: rgba(0,0,0,.3);
 				display:none;
 			}
 			
@@ -103,6 +106,25 @@
 				background-color: gray;
 			}
 			
+			#picFrame{
+				border:5px solid white;
+				background-color:rgba(0,0,0,.3);
+				border-radius:10px;
+				position:fixed;
+				margin-top:20px;
+				min-width:200px;
+				display:inline;
+				text-align:center;
+				overflow:hidden;
+				padding-top:5px;
+
+			}
+
+			img{
+				height:40vh;
+				ms-interpolation-mode: bicubic; 
+			}
+
 			.link{
 				font-size: 20px;
 				color:white;
@@ -116,6 +138,10 @@
 		<script> 
 			function initialize(){
 				statusDisplay = document.getElementById("displayWindow");
+				picFrame = document.getElementById("picFrame");
+				pic = document.getElementById("pic");
+				sideBar = document.getElementById("sideContainer");
+
 				awardSub = document.getElementById('awardSub');
 				projectSub = document.getElementById('projectSub');
 				careerSub = document.getElementById('careerSub')
@@ -125,6 +151,8 @@
 				projectText = "Project Filler";
 				careerText ="Career Filler";
 				aboutText = "About Filler";
+
+				resizePic();
 			}
 			
 			function swapText(text){
@@ -138,9 +166,20 @@
 				aboutSub.style.display = "none";
 				sub.style.display = "block";
 			}
+
+			function resizePic(){
+				//alert(window.outerWidth);
+				//alert(statusDisplay.offsetWidth);
+				//alert(sideBar.offsetWidth);
+
+				picFrame.style.width = window.outerWidth - statusDisplay.offsetWidth - sideBar.offsetWidth - 80 + "px";
+				picFrame.style.marginLeft= window.outerWidth * .006 + "px";
+				
+			}
+
 		</script> 
 	</head>
-	<body onload = "initialize()">
+	<body onload = "initialize()" onresize='resizePic()'>
 		<img class = 'background' src = 'https://i.pinimg.com/originals/5f/1a/d2/5f1ad27958d12f24895bdb686ef56b65.jpg'>
 		<div class = 'header'> 
 			<span> Michael Li </span> <br />
@@ -148,7 +187,7 @@
 			<a class = 'link' href = 'https://www.linkedin.com/in/michael-li-72a8b214a/'> LinkedIn</a>
 		</div>
 
-		<div class = 'sideContainer'> 
+		<div id = 'sideContainer'> 
 			<div class = 'hover'>
 				<p onclick = "swapText(awardText);swapSub(awardSub);"> Awards </p>
 				<p onclick = "swapText(projectText);swapSub(projectSub);"> Projects </p>
@@ -193,11 +232,13 @@
 		</div>
 
 		
-		
 		<div id = 'displayWindow'>
 			Status Information
 		</div>
 		
+		<div id = 'picFrame'>
+			<img id = 'pic' src = 'http://www.stateofdigital.com/wp-content/uploads/2016/09/Penguin.jpg' />
+		<div>
 		
 	</body>
 </html>
