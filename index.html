@@ -11,7 +11,7 @@
 			.background{
 				z-index: -1;
 				position: absolute;
-				overflow:none;
+				overflow:hidden;
 				top:0px;
 				left:0px;
 				width:100%;
@@ -39,12 +39,19 @@
 				display: inline-block;
 			}
 			
+			.hover p{
+				margin-left:5px;
+				margin-right:5px;
+				border-radius:10px;
+			}
+			
 			.hover p:hover{
 				font-style:italic;
 				cursor: pointer;
+				background-color: gray;
 			}
 			
-			.displayWindow{
+			#displayWindow{
 				float: right;
 				border: 5px solid white;
 				border-radius: 15px;
@@ -54,6 +61,7 @@
 				text-align: center;
 				min-height:300px;
 				color:white;
+				overflow:auto;
 				display: inline-block;
 			}
 			
@@ -69,8 +77,19 @@
 		</style>
 		<script> 
 			function initialize(){
-				alert("hi there");
+				statusDisplay = document.getElementById("displayWindow");
+				
+				awardText = "This is filler text for awards";
+				projectText = "Project Filler";
+				careerText ="Career Filler";
+				aboutText = "About Filler";
 			}
+			
+			function swapText(text){
+				statusDisplay.innerHTML = text;
+			}
+			
+			
 		</script> 
 	</head>
 	<body onload = "initialize()">
@@ -81,13 +100,13 @@
 			<a class = 'link' href = 'https://www.linkedin.com/in/michael-li-72a8b214a/'> LinkedIn</a>
 		</div>
 		<div class = 'hover'>
-			<p> Awards </p>
-			<p> Projects </p>
-			<p> Careers </p>
-			<p> About</p>
+			<p onclick = "swapText(awardText)"> Awards </p>
+			<p onclick = "swapText(projectText)"> Projects </p>
+			<p onclick = "swapText(careerText)"> Careers </p>
+			<p onclick = "swapText(aboutText)"> About</p>
 		</div>
 		
-		<div class = 'displayWindow'>
+		<div id = 'displayWindow'>
 			Status Information
 		</div>
 		
