@@ -65,6 +65,12 @@
 				pic.src = srcString;
 			}
 
+			function DoAnimation(direction) {
+				pic.style.opacity = 0;
+				setTimeout(function(){pic.style.opacity = 1;}, 1000)
+				setTimeout(function(){slidePics(direction);},1000)
+			}
+
 
 		</script>
 	</head>
@@ -126,9 +132,9 @@
 		</div>
 
 		<div id = 'picFrame'>
-			<span class = "picNavigator" onclick = "slidePics('LEFT')" style = "left:0;"> < </span>
+			<span class = "picNavigator" onclick = "DoAnimation('LEFT');" style = "left:0;"> < </span>
 			<img id = 'pic' src = 'http://www.stateofdigital.com/wp-content/uploads/2016/09/Penguin.jpg' />
-			<span class = "picNavigator" onclick = "slidePics('RIGHT')" style = "right:0;t;"> > </span>
+			<span class = "picNavigator" onclick = "DoAnimation('RIGHT');" style = "right:0;t;"> > </span>
 		<div>
 
 	</body>
