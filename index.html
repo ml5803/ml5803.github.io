@@ -3,139 +3,9 @@
 <html>
 	<head>
 		<title> Michael Li's site! </title>
-		<style>
-			*{
-				font-family:  consolas;
-			}
-			
-			body{
-				min-width:500px;
-			}
-			
-			.background{
-				z-index: -1;
-				position: absolute;
-				overflow:hidden;
-				top:0px;
-				left:0px;
-				width:100%;
-				height:100%;
-			}
-			
-			.header{
-				font-size:30px;
-				text-align: center;
-				color:white;
-				border:5px solid white;
-				border-radius:20px;
-				padding: 10px 0px 10px 0px;
-				background-color: rgba(0,0,0,.3);
-			}
-			
-			#sideContainer{
-				//border:5px solid red;
-				position:fixed:
-				top:350px;
-				margin-top:20px;
-				margin-left:1%;
-				display:inline-block;
-
-			}
-			.hover{
-				border: 5px solid white;
-				border-radius:10px;
-				width:10vw;
-				min-width:100px;
-				min-height:100px;	
-				text-align: center;
-				background-color: rgba(0,0,0,.3);
-				color:white;
-			}
-			
-			.hover p{
-				margin-left:5px;
-				margin-right:5px;
-				border-radius:10px;
-			}
-			
-			.hover p:hover{
-				font-style:italic;
-				cursor: pointer;
-				background-color: gray;
-			}
-			
-			#displayWindow{
-				float: right;
-				border: 5px solid white;
-				border-radius: 15px;
-				width: 30%;
-				margin-top:20px;
-				margin-right:1%;
-				text-align: center;
-				min-height:450px;
-				padding:5px 5px 5px 5px;
-				color:white;
-				overflow:auto;
-				display: inline-block;
-				background-color: rgba(0,0,0,.3);
-			}
-			
-			.subHover{
-				color:white;
-				min-height:100px;
-				border: 5px solid white;
-				border-radius:10px;
-				margin-top:10px;
-				text-align:center;			
-				min-height:100px;
-				max-height:250px;
-				overflow: auto;
-				background-color: rgba(0,0,0,.3);
-				display:none;
-			}
-			
-			.subHover p{
-				margin-left:5px;
-				margin-right:5px;
-				border-radius:10px;
-			}
-			
-			.subHover p:hover{
-				font-style:italic;
-				cursor: pointer;
-				background-color: gray;
-			}
-			
-			#picFrame{
-				border:5px solid white;
-				background-color:rgba(0,0,0,.3);
-				border-radius:10px;
-				position:fixed;
-				margin-top:20px;
-				min-width:200px;
-				display:inline;
-				text-align:center;
-				overflow:hidden;
-				padding-top:5px;
-
-			}
-
-			img{
-				height:40vh;
-				ms-interpolation-mode: bicubic; 
-			}
-
-			.link{
-				font-size: 20px;
-				color:white;
-			}
-			
-			.link:hover{
-				font-style: italic;
-			}
-			
-		</style>
-		<script> 
+		<link rel = "stylesheet" href="style.css">
+		<style> *{font-family: consolas }</style>
+		<script>
 			function initialize(){
 				statusDisplay = document.getElementById("displayWindow");
 				picFrame = document.getElementById("picFrame");
@@ -146,7 +16,7 @@
 				projectSub = document.getElementById('projectSub');
 				careerSub = document.getElementById('careerSub')
 				aboutSub = document.getElementById('aboutSub');
-				
+
 				awardText = "This is filler text for awards";
 				projectText = "Project Filler";
 				careerText ="Career Filler";
@@ -157,11 +27,11 @@
 				resizePic();
 				slidePics(imgSrcArr);
 			}
-			
+
 			function swapText(text){
 				statusDisplay.innerHTML = text;
 			}
-			
+
 			function swapSub(sub){
 				awardSub.style.display = "none";
 				projectSub.style.display = "none";
@@ -177,18 +47,15 @@
 
 				picFrame.style.width = window.outerWidth - statusDisplay.offsetWidth - sideBar.offsetWidth - 80 + "px";
 				picFrame.style.marginLeft= window.outerWidth * .006 + "px";
-				
 			}
 
 			function slidePics(srcArray){
-
 				for (i = 0; i < srcArray.length; i++){
 					(function(i){
 						window.setTimeout(function(){
 							setPic(srcArray[i]);},i*5000);
 					}(i));
 				}
-
 			}
 
 			function setPic(srcString){
@@ -196,17 +63,17 @@
 			}
 
 
-		</script> 
+		</script>
 	</head>
 	<body onload = "initialize()" onresize='resizePic()'>
 		<img class = 'background' src = 'https://i.pinimg.com/originals/5f/1a/d2/5f1ad27958d12f24895bdb686ef56b65.jpg'>
-		<div class = 'header'> 
+		<div class = 'header'>
 			<span> Michael Li </span> <br />
 			<a class = 'link' href = 'https://github.com/ml5803'> GitHub</a> <br />
 			<a class = 'link' href = 'https://www.linkedin.com/in/michael-li-72a8b214a/'> LinkedIn</a>
 		</div>
 
-		<div id = 'sideContainer'> 
+		<div id = 'sideContainer'>
 			<div class = 'hover'>
 				<p onclick = "swapText(awardText);swapSub(awardSub);"> Awards </p>
 				<p onclick = "swapText(projectText);swapSub(projectSub);"> Projects </p>
@@ -218,13 +85,13 @@
 				<p> Awards</p>
 				<p> Text 2</p>
 			</div>
-		
+
 			<div class = 'subHover' id = 'projectSub'>
 				<p> Project</p>
 				<p> Text 4</p>
 				<p> Text 3</p>
 			</div>
-			
+
 			<div class = 'subHover' id = 'careerSub'>
 				<p> Careers</p>
 				<p> Text 4</p>
@@ -232,7 +99,7 @@
 				<p> Text 2</p>
 				<p> Text 3</p>
 			</div>
-		
+
 			<div class = 'subHover' id = 'aboutSub'>
 				<p> About</p>
 				<p> Text 4</p>
@@ -247,17 +114,17 @@
 				<p> Text 4</p>
 				<p> Text 3</p>
 				<p> Text 2</p>
-			</div>	
+			</div>
 		</div>
 
-		
+
 		<div id = 'displayWindow'>
 			Status Information
 		</div>
-		
+
 		<div id = 'picFrame'>
 			<img id = 'pic' src = 'http://www.stateofdigital.com/wp-content/uploads/2016/09/Penguin.jpg' />
 		<div>
-		
+
 	</body>
 </html>
