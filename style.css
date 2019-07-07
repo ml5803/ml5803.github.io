@@ -1,6 +1,7 @@
 <style>
   body{
     min-width:500px;
+    min-height:500px;
     overflow: hidden;
   }
 
@@ -64,7 +65,7 @@
     margin-top:20px;
     margin-right:1%;
     text-align: center;
-    min-height:450px;
+    min-height:300px;
     padding:5px 5px 5px 5px;
     color:white;
     overflow:auto;
@@ -102,14 +103,14 @@
     border:5px solid white;
     background-color:rgba(0,0,0,.3);
     border-radius:10px;
-    position:fixed;
+    position:absolute;
     margin-top:20px;
     min-width:200px;
     display:inline;
     text-align:center;
     overflow:hidden;
     padding-top:5px;
-
+    min-height: 300px;
   }
 
   img{
@@ -124,6 +125,21 @@
 
   .link:hover{
     font-style: italic;
+  }
+
+  .picNavigator{
+    border-radius: 10px;
+    font-size: 32px;
+    min-width:50px;
+    display:inline-block;
+    margin-bottom: 3px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .picNavigator:hover{
+    cursor:pointer;
+      background-color: rgba(255, 255, 255, 0.2);;
   }
 
 </style>

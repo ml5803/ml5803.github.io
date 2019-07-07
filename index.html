@@ -6,6 +6,9 @@
 		<link rel = "stylesheet" href="style.css">
 		<style> *{font-family: consolas }</style>
 		<script>
+			var imgSrcArr = ["http://www.stateofdigital.com/wp-content/uploads/2016/09/Penguin.jpg","https://tse1.mm.bing.net/th?id=OIP.mFSuEAUy23zzTtQRNGfukQEsDh&pid=15.1","http://en.es-static.us/upl/2012/06/penguinCloseup.jpg"];
+			var currInd = 0;
+
 			function initialize(){
 				statusDisplay = document.getElementById("displayWindow");
 				picFrame = document.getElementById("picFrame");
@@ -21,8 +24,6 @@
 				projectText = "Project Filler";
 				careerText ="Career Filler";
 				aboutText = "About Filler";
-
-				imgSrcArr = ["http://www.stateofdigital.com/wp-content/uploads/2016/09/Penguin.jpg","https://tse1.mm.bing.net/th?id=OIP.mFSuEAUy23zzTtQRNGfukQEsDh&pid=15.1","http://en.es-static.us/upl/2012/06/penguinCloseup.jpg"];
 
 				resizePic();
 				slidePics(imgSrcArr);
@@ -49,13 +50,15 @@
 				picFrame.style.marginLeft= window.outerWidth * .006 + "px";
 			}
 
-			function slidePics(srcArray){
-				for (i = 0; i < srcArray.length; i++){
-					(function(i){
-						window.setTimeout(function(){
-							setPic(srcArray[i]);},i*5000);
-					}(i));
+			function slidePics(direction){
+				if (direction == "LEFT"){
+					currInd++;
+				}else{
+					currInd--;
 				}
+				if (currInd < 0) {currInd = imgSrcArr.length-1;}
+				if (currInd >= imgSrcArr.length){currInd = 0;}
+				setPic(imgSrcArr[currInd]);
 			}
 
 			function setPic(srcString){
@@ -123,7 +126,9 @@
 		</div>
 
 		<div id = 'picFrame'>
+			<span class = "picNavigator" onclick = "slidePics('LEFT')" style = "left:0;"> < </span>
 			<img id = 'pic' src = 'http://www.stateofdigital.com/wp-content/uploads/2016/09/Penguin.jpg' />
+			<span class = "picNavigator" onclick = "slidePics('RIGHT')" style = "right:0;t;"> > </span>
 		<div>
 
 	</body>
