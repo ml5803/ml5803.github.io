@@ -9,10 +9,10 @@
 			var imgSrcArr = ["http://www.stateofdigital.com/wp-content/uploads/2016/09/Penguin.jpg","http://en.es-static.us/upl/2012/06/penguinCloseup.jpg"];
 			var currInd = 0;
 
-			var aboutImages = [];
+			var aboutImages = ["images/golf.jpg"];
 			var awardImages = [];
-			var projectImages =[];
-			var careerImages = [];
+			var projectImages =["images/testgen.png", "images/SudokuSolver.png", "images/discordbot.png"];
+			var careerImages = ["images/work1.jpg", "images/work2.jpg", "images/group.jpg"];
 
 			function initialize(){
 				statusDisplay = document.getElementById("displayWindow");
@@ -25,7 +25,7 @@
 				careerSub = document.getElementById('careerSub')
 				aboutSub = document.getElementById('aboutSub');
 
-				aboutText = "Hi again. So here you can find information about me. I really like penguins ( ')>... Oh not that information? Click anything on the left to begin then!";
+				aboutText = "Hi there! My name is Michael Li. I'm a rising Junior majoring in Computer Science at New York University. I began my journey in CS starting Junior year of high school and have continued since. My primary interests are Artificial Intelligence and Game Development.";
 				educationText = "I'm currently studying CS at NYU Tandon School of Engineering. At the moment, I'm in the Honors Program and going for a minor in Math, Game Development and potentially Finance."
 				awardText = "Awards <div>  <ul> <li> National Merit Finalist 2016 </li> <li> Regional Science Olympiad Second Place </li> <li> NYU Dean's List </li> <li> Brooklyn Tech Top AMC 10A Scorer </li> <li> TRIO Award </li> </ul> </div>";
 				extracurrText = " Currently involved with:  <ul> <li> NYU Trio Scholars Program </li> <li> Brooklyn Tech / Con Ed Program </li> </ul> Previously involved with: <ul> <li> Brooklyn Tech Math Team (Team B Captain) </li> <li> Brooklyn Tech Science Olympiad (Game On Captain, Build Captain) </ul>";
@@ -78,6 +78,10 @@
 				setTimeout(function(){slidePics(direction);}, 1000)
 			}
 
+			function swapPicCollection(collection){
+				imgSrcArr = collection;
+				DoAnimation("LEFT");
+			}
 
 		</script>
 	</head>
@@ -85,16 +89,16 @@
 		<img class = 'background' src = 'images/background.jpg'>
 		<div class = 'header'>
 			<span> Michael Li </span> <br />
-			<a class = 'link' href = 'https://github.com/ml5803'> GitHub </a> <br />
+			<a class = 'link' href = 'https://github.com/ml5803'>GitHub</a> <br />
 			<a class = 'link' href = 'https://www.linkedin.com/in/michael-li-72a8b214a/'> LinkedIn</a>
 		</div>
 
 		<div id = 'sideContainer'>
 			<div class = 'hover'>
-				<p onclick = "swapText(aboutText);swapSub(aboutSub);"> About </p>
+				<p onclick = "swapText(aboutText);swapSub(aboutSub);swapPicCollection(aboutImages);"> About </p>
 				<p onclick = "swapText(awardText);swapSub(awardSub);"> Awards </p>
-				<p onclick = "swapText(projectText);swapSub(projectSub);"> Projects </p>
-				<p onclick = "swapText(careerText);swapSub(careerSub);"> Careers </p>
+				<p onclick = "swapText(projectText);swapSub(projectSub);swapPicCollection(projectImages);"> Projects </p>
+				<p onclick = "swapText(careerText);swapSub(careerSub);swapPicCollection(careerImages);"> Careers </p>
 			</div>
 
 			<div class = 'subHover' id = 'aboutSub'>
@@ -111,14 +115,14 @@
 			</div>
 
 			<div class = 'subHover' id = 'careerSub'>
-				<p onclick = "swapText(careerText)"> Careers </p>
+				<p onclick = "swapText(careerText);"> Careers </p>
 			</div>
 		</div>
 
 
 		<div id = 'displayWindow'>
 			<div>
-				Hi there! My name is Michael Li. I'm a rising Junior majoring in Computer Science at New York University. I began my journey in CS starting Junior year of high school and have continued since. My primary interests are Artificial Intelligence and Game Development.
+				Hey! So here you can find information about me. I really like penguins ( ')>... Oh not that information? Click anything on the left to begin then!
 				<br /> <br />
 				This is a  website that was initially started as a fun personal project. Feel free to click around to get information :).
 			 </div>
