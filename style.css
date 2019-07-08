@@ -153,4 +153,7 @@
     100%  {opacity: 1}
   }
 
+  ul{
+    text-align: left;
+  }
 </style>

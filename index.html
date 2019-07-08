@@ -6,8 +6,13 @@
 		<link rel = "stylesheet" href="style.css">
 		<style> *{font-family: consolas }</style>
 		<script>
-			var imgSrcArr = ["http://www.stateofdigital.com/wp-content/uploads/2016/09/Penguin.jpg","https://tse1.mm.bing.net/th?id=OIP.mFSuEAUy23zzTtQRNGfukQEsDh&pid=15.1","http://en.es-static.us/upl/2012/06/penguinCloseup.jpg"];
+			var imgSrcArr = ["http://www.stateofdigital.com/wp-content/uploads/2016/09/Penguin.jpg","http://en.es-static.us/upl/2012/06/penguinCloseup.jpg"];
 			var currInd = 0;
+
+			var aboutImages = [];
+			var awardImages = [];
+			var projectImages =[];
+			var careerImages = [];
 
 			function initialize(){
 				statusDisplay = document.getElementById("displayWindow");
@@ -20,10 +25,12 @@
 				careerSub = document.getElementById('careerSub')
 				aboutSub = document.getElementById('aboutSub');
 
-				awardText = "This is filler text for awards";
-				projectText = "Project Filler";
-				careerText ="Career Filler";
-				aboutText = "About Filler";
+				aboutText = "Hi again. So here you can find information about me. I really like penguins ( ')>... Oh not that information? Click anything on the left to begin then!";
+				educationText = "I'm currently studying CS at NYU Tandon School of Engineering. At the moment, I'm in the Honors Program and going for a minor in Math, Game Development and potentially Finance."
+				awardText = "Awards <div>  <ul> <li> National Merit Finalist 2016 </li> <li> Regional Science Olympiad Second Place </li> <li> NYU Dean's List </li> <li> Brooklyn Tech Top AMC 10A Scorer </li> <li> TRIO Award </li> </ul> </div>";
+				extracurrText = " Currently involved with:  <ul> <li> NYU Trio Scholars Program </li> <li> Brooklyn Tech / Con Ed Program </li> </ul> Previously involved with: <ul> <li> Brooklyn Tech Math Team (Team B Captain) </li> <li> Brooklyn Tech Science Olympiad (Game On Captain, Build Captain) </ul>";
+				projectText = "Project List: <ul> <li> Robot Course Navigation <a href = 'https://www.youtube.com/watch?v=guCLP5Cw-TI'> Watch </a> </li> <li> Test Generator Application <a href = 'https://github.com/ml5803/TestGeneratorDB' > Here </a> </li>  <li> Sudoku Solver <a href = 'https://github.com/ml5803/Sudoku_Solver'> Here </a> </li> <li> Discord Chatbot </li> </ul> ";
+				careerText ="Current: <ul> <li> Computer Aide Co-Op at Con Edison </li> <li> TRIO Tutor at NYU Tandon </li> </ul> Previously: <ul> <li> Assistant Teacher at Brooklyn Tech STEM Pipeline Program </li> <li> Tutor at Seward Park Library </li> </ul>";
 
 				resizePic();
 				slidePics(imgSrcArr);
@@ -68,67 +75,53 @@
 			function DoAnimation(direction) {
 				pic.style.opacity = 0;
 				setTimeout(function(){pic.style.opacity = 1;}, 1000)
-				setTimeout(function(){slidePics(direction);},1000)
+				setTimeout(function(){slidePics(direction);}, 1000)
 			}
 
 
 		</script>
 	</head>
 	<body onload = "initialize()" onresize='resizePic()'>
-		<img class = 'background' src = 'https://i.pinimg.com/originals/5f/1a/d2/5f1ad27958d12f24895bdb686ef56b65.jpg'>
+		<img class = 'background' src = 'images/background.jpg'>
 		<div class = 'header'>
 			<span> Michael Li </span> <br />
-			<a class = 'link' href = 'https://github.com/ml5803'> GitHub</a> <br />
+			<a class = 'link' href = 'https://github.com/ml5803'> GitHub </a> <br />
 			<a class = 'link' href = 'https://www.linkedin.com/in/michael-li-72a8b214a/'> LinkedIn</a>
 		</div>
 
 		<div id = 'sideContainer'>
 			<div class = 'hover'>
+				<p onclick = "swapText(aboutText);swapSub(aboutSub);"> About </p>
 				<p onclick = "swapText(awardText);swapSub(awardSub);"> Awards </p>
 				<p onclick = "swapText(projectText);swapSub(projectSub);"> Projects </p>
 				<p onclick = "swapText(careerText);swapSub(careerSub);"> Careers </p>
-				<p onclick = "swapText(aboutText);swapSub(aboutSub);"> About</p>
+			</div>
+
+			<div class = 'subHover' id = 'aboutSub'>
+				<p onclick="swapText(educationText);"> Education </p>
+				<p onclick="swapText(extracurrText);"> Extracurriculars</p>
 			</div>
 
 			<div class = 'subHover' id = 'awardSub'>
-				<p> Awards</p>
-				<p> Text 2</p>
+				<p onclick="swapText(awardText)"> Awards</p>
 			</div>
 
 			<div class = 'subHover' id = 'projectSub'>
 				<p> Project</p>
-				<p> Text 4</p>
-				<p> Text 3</p>
 			</div>
 
 			<div class = 'subHover' id = 'careerSub'>
-				<p> Careers</p>
-				<p> Text 4</p>
-				<p> Text 3</p>
-				<p> Text 2</p>
-				<p> Text 3</p>
-			</div>
-
-			<div class = 'subHover' id = 'aboutSub'>
-				<p> About</p>
-				<p> Text 4</p>
-				<p> Text 3</p>
-				<p> Text 2</p>
-				<p> Text 4</p>
-				<p> Text 3</p>
-				<p> Text 2</p>
-				<p> Text 4</p>
-				<p> Text 3</p>
-				<p> Text 2</p>
-				<p> Text 4</p>
-				<p> Text 3</p>
-				<p> Text 2</p>
+				<p onclick = "swapText(careerText)"> Careers </p>
 			</div>
 		</div>
 
 
 		<div id = 'displayWindow'>
-			Status Information
+			<div>
+				Hi there! My name is Michael Li. I'm a rising Junior majoring in Computer Science at New York University. I began my journey in CS starting Junior year of high school and have continued since. My primary interests are Artificial Intelligence and Game Development.
+				<br /> <br />
+				This is a  website that was initially started as a fun personal project. Feel free to click around to get information :).
+			 </div>
 		</div>
 
 		<div id = 'picFrame'>
