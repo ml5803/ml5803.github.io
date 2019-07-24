@@ -1,13 +1,12 @@
 <style>
+
   body{
-    min-width:500px;
-    min-height:500px;
-    overflow: hidden;
+    position:fixed;
   }
 
   .background{
     z-index: -1;
-    position: absolute;
+    position: fixed;
     overflow:hidden;
     top:0px;
     left:0px;
@@ -38,7 +37,7 @@
     border: 5px solid white;
     border-radius:10px;
     width:10vw;
-    min-width:100px;
+    min-width:150px;
     min-height:100px;
     text-align: center;
     background-color: rgba(0,0,0,.3);
@@ -58,10 +57,11 @@
   }
 
   #displayWindow{
-    float: right;
+    position:absolute;
+    right:0px;
     border: 5px solid white;
     border-radius: 15px;
-    width: 30%;
+    width: 25%;
     margin-top:20px;
     margin-right:1%;
     text-align: center;
@@ -120,7 +120,7 @@
     -ms-transition: all 1s ease-in-out;
     -o-transition: all 1s ease-in-out;
     transition: all 1s ease-in-out;
-    height:40vh;
+    max-height: 300px;
   }
 
   .link{

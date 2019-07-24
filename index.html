@@ -85,6 +85,7 @@
 
 		</script>
 	</head>
+
 	<body onload = "initialize()" onresize='resizePic()'>
 		<img class = 'background' src = 'images/background.jpg'>
 		<div class = 'header'>
@@ -120,6 +121,12 @@
 		</div>
 
 
+		<div id = 'picFrame'>
+			<span class = "picNavigator" onclick = "DoAnimation('LEFT');" style = "left:0;"> < </span>
+			<img id = 'pic' src = 'http://www.stateofdigital.com/wp-content/uploads/2016/09/Penguin.jpg' />
+			<span class = "picNavigator" onclick = "DoAnimation('RIGHT');" style = "right:0;t;"> > </span>
+		</div>
+
 		<div id = 'displayWindow'>
 			<div>
 				Hey! So here you can find information about me. I really like penguins ( ')>... Oh not that information? Click anything on the left to begin then!
@@ -127,12 +134,5 @@
 				This is a  website that was initially started as a fun personal project. Feel free to click around to get information :).
 			 </div>
 		</div>
-
-		<div id = 'picFrame'>
-			<span class = "picNavigator" onclick = "DoAnimation('LEFT');" style = "left:0;"> < </span>
-			<img id = 'pic' src = 'http://www.stateofdigital.com/wp-content/uploads/2016/09/Penguin.jpg' />
-			<span class = "picNavigator" onclick = "DoAnimation('RIGHT');" style = "right:0;t;"> > </span>
-		<div>
-
 	</body>
 </html>
