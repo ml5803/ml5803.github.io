@@ -29,7 +29,6 @@
     position:fixed:
     top:350px;
     margin-top:20px;
-    margin-left:1%;
     display:inline-block;
 
   }
@@ -63,7 +62,7 @@
     border-radius: 15px;
     width: 25%;
     margin-top:20px;
-    margin-right:1%;
+    margin-right:7px;
     text-align: center;
     min-height:300px;
     padding:5px 5px 5px 5px;
