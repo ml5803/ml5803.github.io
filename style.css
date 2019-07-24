@@ -57,7 +57,7 @@
   }
 
   #displayWindow{
-    position:absolute;
+    position:fixed;
     right:0px;
     border: 5px solid white;
     border-radius: 15px;
@@ -120,7 +120,7 @@
     -ms-transition: all 1s ease-in-out;
     -o-transition: all 1s ease-in-out;
     transition: all 1s ease-in-out;
-    max-height: 300px;
+    max-height:400px;
   }
 
   .link{
