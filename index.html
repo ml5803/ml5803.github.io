@@ -9,10 +9,10 @@
 			var imgSrcArr = ["http://www.stateofdigital.com/wp-content/uploads/2016/09/Penguin.jpg","http://en.es-static.us/upl/2012/06/penguinCloseup.jpg"];
 			var currInd = 0;
 
-			var aboutImages = ["images/golf.jpg"];
-			var awardImages = [];
+			var aboutImages = ["images/golf.jpg", "images/speech1.jpg"];
+			var awardImages = ["images/workaward1.jpg"];
 			var projectImages =["images/testgen.PNG", "images/8puzzle.PNG", "images/discordbot.png","images/sudoku.png"];
-			var careerImages = ["images/work1.jpg", "images/work2.jpg", "images/group.jpg"];
+			var careerImages = ["images/speech2.jpg","images/work1.jpg", "images/work2.jpg", "images/group.jpg"];
 
 			function initialize(){
 				statusDisplay = document.getElementById("displayWindow");
@@ -97,7 +97,7 @@
 		<div id = 'sideContainer'>
 			<div class = 'hover'>
 				<p onclick = "swapText(aboutText);swapSub(aboutSub);swapPicCollection(aboutImages);"> About </p>
-				<p onclick = "swapText(awardText);swapSub(awardSub);"> Awards </p>
+				<p onclick = "swapText(awardText);swapSub(awardSub);swapPicCollection(awardImages);"> Awards </p>
 				<p onclick = "swapText(projectText);swapSub(projectSub);swapPicCollection(projectImages);"> Projects </p>
 				<p onclick = "swapText(careerText);swapSub(careerSub);swapPicCollection(careerImages);"> Careers </p>
 			</div>
@@ -108,7 +108,7 @@
 			</div>
 
 			<div class = 'subHover' id = 'awardSub'>
-				<p onclick="swapText(awardText)"> Awards</p>
+				<p onclick="swapText(awardText);"> Awards</p>
 			</div>
 
 			<div class = 'subHover' id = 'projectSub'>
